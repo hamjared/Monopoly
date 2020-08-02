@@ -33,61 +33,61 @@ public class StandardPropertyFactory
 
     private void makeUtilityProperties()
     {
-        
+    	properties.addAll(new UtilityPropertyGroupFactory().makePropertyGroup());
 
     }
 
     private void makeBlueProperties()
     {
-        // TODO Auto-generated method stub
+        properties.addAll(new BluePropertyGroupFactory().makePropertyGroup());
 
     }
 
     private void makeGreenProperties()
     {
-        // TODO Auto-generated method stub
+    	properties.addAll(new GreenPropertyGroupFactory().makePropertyGroup());
 
     }
 
     private void makeRedProperties()
     {
-        // TODO Auto-generated method stub
+    	properties.addAll(new RedPropertyGroupFactory().makePropertyGroup());
 
     }
 
     private void makeYellowProeprties()
     {
-        // TODO Auto-generated method stub
+    	properties.addAll(new YellowPropertyGroupFactory().makePropertyGroup());
 
     }
 
     private void makeOrangeProperties()
     {
-        // TODO Auto-generated method stub
+    	properties.addAll(new OrangePropertyGroupFactory().makePropertyGroup());
 
     }
 
     private void makePurpleProperties()
     {
-        // TODO Auto-generated method stub
+    	properties.addAll(new PurplePropertyGroupFactory().makePropertyGroup());
 
     }
 
     private void makeRailroadProperties()
     {
-        // TODO Auto-generated method stub
+    	properties.addAll(new RailRoadPropertyGroupFactory().makePropertyGroup());
 
     }
 
     private void makeSkyBlueProperties()
     {
-        // TODO Auto-generated method stub
+    	properties.addAll(new SkyBluePropertyGroupFactory().makePropertyGroup());
 
     }
 
     private void makeBrownProperties()
     {
-        // TODO Auto-generated method stub
+    	properties.addAll(new BrownPropertyGroupFactory().makePropertyGroup());
 
     }
     

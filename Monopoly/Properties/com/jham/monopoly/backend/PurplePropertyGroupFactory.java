@@ -1,7 +1,7 @@
 package com.jham.monopoly.backend;
 
 public class PurplePropertyGroupFactory
-        extends PropertyGroupFactory
+        extends StandardPropertyGroupFactory
 {
     private static final String[] PROPERTY_NAMES = {"St. Charles Place", "States Avenue", "Virginia Avenue"};
     private static final int[] PROPERTY_COST = {140, 140, 160};
@@ -11,11 +11,14 @@ public class PurplePropertyGroupFactory
             {6, 40, 100, 300, 450, 600}
     };
     private static final int HOUSE_COST = 50;
+    private static final int[] SPACES_FROM_GO = {14, 13, 11};
     
     public PurplePropertyGroupFactory(){
         propertyNames = PROPERTY_NAMES;
         propertyCost = PROPERTY_COST;
         propertyRents = PROPERTY_RENTS;
         houseCost = HOUSE_COST;
+        color = Color.Purple;
+        spacesFromGo = SPACES_FROM_GO;
     }
 }

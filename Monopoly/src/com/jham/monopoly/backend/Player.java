@@ -3,6 +3,8 @@ package com.jham.monopoly.backend;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Player
 {
@@ -27,15 +29,20 @@ public class Player
     }
     
     public void throwDice() {
-        int die1 = (int) Math.round((Math.random() * 5)) + 1;
-        int die2 = (int) Math.round((Math.random() * 5)) + 1;
+        List<Integer> throwDice = Die.getInstance().throw2Dice();
         
-        if (die1 == die2) {
+        if (throwDice.get(0) == throwDice.get(1)) {
             myDoublesInARow++;
         }
         
-        myCurDiceRoll = die1 + die2;
+        myCurDiceRoll = throwDice.get(0) + throwDice.get(1);
         
+    }
+     
+    public List<Property> getPropertiesOfColor(Color c){
+    	return myProperties.stream()
+    			.filter(prop -> prop.myColor == c)
+    			.collect(Collectors.toList());
     }
     
     public void incrementMoney(int amount) {
@@ -57,11 +64,16 @@ public class Player
     }
     
     public void addProperty(Property property) {
+    	if(myProperties.contains(property)) {
+    		return;
+    	}
         myProperties.add(property);
+        property.setMyOwner(this);
     }
     
     public void removeProperty(Property property) {
         myProperties.remove(property);
+        property.setMyOwner(null);
     }
 
     public int getMyMoney()

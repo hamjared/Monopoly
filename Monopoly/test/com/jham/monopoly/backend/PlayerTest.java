@@ -1,5 +1,8 @@
 package com.jham.monopoly.backend;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import junit.framework.TestCase;
 
 public class PlayerTest extends TestCase
@@ -72,4 +75,21 @@ public class PlayerTest extends TestCase
 
     }
 
+    
+    public void testGetPropertiesOfColor() {
+    	List<Property> brownProperties = new BrownPropertyGroupFactory().makePropertyGroup();
+    	List<Property> allProps = new SkyBluePropertyGroupFactory().makePropertyGroup();
+    	allProps.addAll(brownProperties);
+    	
+    	Player player = new Player(0, null);
+    	for (Property prop: allProps) {
+    		player.addProperty(prop);
+    	}
+    	
+    	
+    	assertEquals(brownProperties, player.getPropertiesOfColor(Color.Brown));
+    	
+    	
+    	
+    }
 }
